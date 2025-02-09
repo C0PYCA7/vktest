@@ -6,6 +6,6 @@ import App from './App';  // Импортируем основной компо�
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />  {/* Рендерим компонент App */}
+        <App />
     </React.StrictMode>,
 );

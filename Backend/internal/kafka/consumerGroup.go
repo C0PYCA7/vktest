@@ -41,7 +41,7 @@ func (consumer *Consumer) ConsumeClaim(session sarama.ConsumerGroupSession, clai
 			var container models.Container
 			err := json.Unmarshal(message.Value, &container)
 			if err != nil {
-				log.Println("unmarshal message in comsume: ", err)
+				log.Println("unmarshal message in consume: ", err)
 				return err
 			}
 			err = consumer.Updater.UpdateContainerInfo(container.ContainerIP, container.PingTimeMKs, container.LastSuccessDate)

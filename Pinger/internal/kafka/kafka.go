@@ -94,6 +94,5 @@ func (a *AsyncProducer) SendMessage(topic string, data models.Container) error {
 	}
 
 	a.producer.Input() <- message
-	log.Println("Сообщение отправлено: ", message)
 	return nil
 }

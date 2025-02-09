@@ -54,8 +54,6 @@ func WorkerPool(containers []models.Container, sender Sender, topic string) {
 func worker(jobs chan models.Container, result chan *models.Container, id int) {
 	for j := range jobs {
 		container, _ := pinger.PingContainer(j)
-		log.Println("контейнер в воркере после пинга: ", container)
 		result <- container
 	}
-	log.Printf("работник %d закончил работать\n", id)
 }
